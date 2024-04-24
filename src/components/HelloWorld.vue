@@ -1,5 +1,5 @@
 <template>
-  <div class="page-load center-center">
+  <div class="page-load center-center max-width750">
     <div class="logo-cont center-center">
       <div class="center-center flex-column">
         <ul class="center-center text">
@@ -68,8 +68,6 @@ export default {
 <style scoped lang="less">
 .page-load {
   height: 100vh;
-  max-width: 750px;
-  margin: 0 auto;
   color: #fff;
   .logo-cont {
     background: url("@/assets/img/Intersection1@2x.png") no-repeat center center;
