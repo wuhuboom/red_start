@@ -55,11 +55,11 @@ export default {
     },
   },
   async created() {
-    // if (!config.LinePATHArr.length || !config.cacheName) return;
-    // const linePath = this.getLinePath();
-    // await this.sleep(config.timeoutStr);
-    // if (!linePath) return;
-    // location.href = `${linePath.prefix}${linePath.domain}`;
+    if (!config.LinePATHArr.length || !config.cacheName) return;
+    const linePath = this.getLinePath();
+    await this.sleep(config.timeoutStr);
+    if (!linePath) return;
+    location.href = `${linePath.prefix}${linePath.domain}`;
   },
 };
 </script>
