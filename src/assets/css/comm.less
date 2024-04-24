@@ -58,3 +58,23 @@ body {
   max-width: 750PX;
   margin: 0 auto;
 }
+/* 在 CSS 文件中添加媒体查询 */
+@media screen and (min-width: 750PX) {
+  .logo-cont {
+    width: 375PX !important;
+    height: 603PX !important;
+  }
+  .text {
+    font-size: 26PX !important;
+    margin-bottom: 16PX !important;
+    margin-top: 80PX !important;
+    & > li {
+      margin: 0 6PX !important;
+    }
+  }
+  .ball {
+    width: 9PX !important;
+    height: 9PX !important;
+    margin: 0 5PX !important;
+  }
+}
