@@ -3,9 +3,7 @@
     <div class="logo-cont center-center">
       <div class="center-center flex-column">
         <ul class="center-center text">
-          <li>Z</li>
-          <li>E</li>
-          <li>P</li>
+          <li v-for="(item, idx) in text" :key="idx">{{ item }}</li>
         </ul>
         <div class="loader">
           <div class="ball"></div>
@@ -52,6 +50,11 @@ export default {
     },
     sleep(ms) {
       return new Promise((resolve) => setTimeout(resolve, ms));
+    },
+  },
+  computed: {
+    text() {
+      return "ACFN".split("");
     },
   },
   async created() {
