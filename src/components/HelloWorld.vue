@@ -3,14 +3,10 @@
     <div class="logo-cont center-center">
       <div class="center-center flex-column">
         <ul class="center-center text">
-          <li v-for="(item, idx) in text" :key="idx">{{ item }}</li>
+          <li>Selecting the optimal route for you…</li>
         </ul>
         <div class="loader">
-          <div class="ball"></div>
-          <div class="ball"></div>
-          <div class="ball"></div>
-          <div class="ball"></div>
-          <div class="ball"></div>
+          <vanLoading size="40" color="#f5673e" type="spinner" />
         </div>
       </div>
     </div>
@@ -26,6 +22,9 @@ const config = {
   // eslint-disable-next-line no-undef
   timeoutStr: typeof timeoutStr === "undefined" ? 3000 : timeoutStr,
 };
+import { Loading } from "vant";
+//Loading 样式
+import "vant/lib/loading/style";
 export default {
   name: "HelloWorld",
   methods: {
@@ -52,6 +51,9 @@ export default {
       return new Promise((resolve) => setTimeout(resolve, ms));
     },
   },
+  components: {
+    vanLoading: Loading,
+  },
   computed: {
     text() {
       return "ACFN".split("");
@@ -72,15 +74,15 @@ export default {
 .page-load {
   height: 100vh;
   color: #fff;
+  background: url("@/assets/img/bg.webp") no-repeat center center;
+  background-size: cover;
   .logo-cont {
-    background: url("@/assets/img/Intersection1@2x.png") no-repeat center center;
-    background-size: 100% 100%;
     width: 375px;
     height: 603px;
   }
   .text {
-    font-size: 26px;
-    color: #f11714;
+    font-size: 13px;
+    color: #e3e7eb;
     margin-bottom: 16px;
     margin-top: 80px;
     & > li {
