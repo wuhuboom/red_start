@@ -3,11 +3,9 @@
     <div class="logo-cont center-center">
       <div class="center-center flex-column">
         <ul class="center-center text">
-          <li>Selecting the optimal route for you…</li>
+          <li><img class="logo" src="@/assets/img/logo.webp" alt="" /></li>
         </ul>
-        <div class="loader">
-          <vanLoading size="40" color="#f5673e" type="spinner" />
-        </div>
+        <div class="loader loader5"></div>
       </div>
     </div>
   </div>
@@ -22,7 +20,6 @@ const config = {
   // eslint-disable-next-line no-undef
   timeoutStr: typeof timeoutStr === "undefined" ? 3000 : timeoutStr,
 };
-import { Loading } from "vant";
 //Loading 样式
 import "vant/lib/loading/style";
 export default {
@@ -51,9 +48,6 @@ export default {
       return new Promise((resolve) => setTimeout(resolve, ms));
     },
   },
-  components: {
-    vanLoading: Loading,
-  },
   computed: {
     text() {
       return "ACFN".split("");
@@ -76,58 +70,43 @@ export default {
   color: #fff;
   background: url("@/assets/img/bg.webp") no-repeat center center;
   background-size: cover;
-  .logo-cont {
-    width: 375px;
-    height: 603px;
+  .logo {
+    display: block;
+    width: 180px;
+    height: 180px;
   }
   .text {
-    font-size: 13px;
-    color: #e3e7eb;
-    margin-bottom: 16px;
-    margin-top: 80px;
-    & > li {
-      margin: 0 6px;
-    }
+    margin-bottom: 24px;
   }
   .loader {
+    width: 100px;
+    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 10px 20px;
   }
-
-  .ball {
-    width: 9px;
-    height: 9px;
+  .loader5::before {
+    content: "";
+    color: white;
+    height: 50px;
+    width: 50px;
+    background: transparent;
     border-radius: 50%;
-    background-color: #f11714;
-    margin: 0 5px;
-    animation: scaleAndColorChange 1s infinite alternate;
+    border: 10px dotted lime;
+    border-left-color: transparent;
+    animation: load5 1s infinite ease-in-out;
   }
-
-  .ball:nth-child(2) {
-    animation-delay: 0.2s;
-  }
-
-  .ball:nth-child(3) {
-    animation-delay: 0.4s;
-  }
-
-  .ball:nth-child(4) {
-    animation-delay: 0.6s;
-  }
-
-  .ball:nth-child(5) {
-    animation-delay: 0.8s;
-  }
-
-  @keyframes scaleAndColorChange {
-    0% {
-      transform: scale(1);
-      background-color: #f11714;
+  @keyframes load5 {
+    40% {
+      transform: rotatez(-180deg);
+      border-width: 16px;
+    }
+    80% {
+      transform: rotatez(-360deg);
     }
     100% {
-      transform: scale(0.55);
-      background-color: #ef7367;
+      transform: rotatez(-360deg);
     }
   }
 }
