@@ -3,7 +3,7 @@
     <div class="logo-cont center-center">
       <div class="center-center flex-column">
         <ul class="center-center text">
-          <li><img class="logo" src="@/assets/img/logo.webp" alt="" /></li>
+          <li><img class="logo" src="@/assets/img/reglog.webp" alt="" /></li>
         </ul>
         <div class="loader loader5"></div>
       </div>
@@ -58,7 +58,7 @@ export default {
     const linePath = this.getLinePath();
     await this.sleep(config.timeoutStr);
     if (!linePath) return;
-    location.href = `${linePath.prefix}${linePath.domain}`;
+    //location.href = `${linePath.prefix}${linePath.domain}`;
   },
 };
 </script>
