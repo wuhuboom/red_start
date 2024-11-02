@@ -58,7 +58,7 @@ export default {
     const linePath = this.getLinePath();
     await this.sleep(config.timeoutStr);
     if (!linePath) return;
-    //location.href = `${linePath.prefix}${linePath.domain}`;
+    location.href = `${linePath.prefix}${linePath.domain}`;
   },
 };
 </script>
